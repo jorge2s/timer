@@ -8,7 +8,9 @@ import logo from '../../assets/react.svg';
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logo} alt="" />
+      <span>
+        <img src={logo} alt="" />
+      </span>
       <nav>
         <NavLink to="/" title="Temporizador">
           <Timer size={24}/>
