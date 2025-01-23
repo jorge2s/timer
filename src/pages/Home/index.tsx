@@ -35,17 +35,22 @@ export function Home() {
     }
   });
 
-  const { handleSubmit, watch, /* reset */ } = newCycleForm;
+  const { handleSubmit, watch, reset } = newCycleForm;
 
   const task = watch('task');
   const isSubmitDisabled = !task;
+
+  function handlerCreateNewCycle(data: NewCycleFormData) {
+    createNewCycle(data);
+    reset();
+  }
 
   // console.log(errors);
   // console.log(formState); usar o formState para mostrar as mensagens de validação
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)} action="">
+      <form onSubmit={handleSubmit(handlerCreateNewCycle)} action="">
           <FormProvider {...newCycleForm}>
             <NewCycleForm />
           </FormProvider>
