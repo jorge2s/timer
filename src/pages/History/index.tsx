@@ -24,7 +24,7 @@ export function History() {
             </tr>
           </thead>
           <tbody>
-            {cycles.length && cycles.map(({id, task, minutesAmount, startDate, finishedDate, interruptDate }) => (
+            {!!cycles.length && cycles.map(({id, task, minutesAmount, startDate, finishedDate, interruptDate }) => (
               <tr key={id}>
                 <td>{task}</td>
                 <td>{minutesAmount} minutos</td>
